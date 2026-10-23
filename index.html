@@ -1,125 +1,371 @@
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nawal Exam Prep</title>
-  <style>
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f4f7fc;
-      color: #17233d;
-    }
-    header {
-      background: #102b59;
-      color: white;
-      padding: 22px 16px;
-    }
-    header h1 { margin: 0 0 8px; font-size: 25px; }
-    header p { margin: 0; color: #dbe7ff; }
-    nav {
-      background: white;
-      padding: 14px 16px;
-      border-bottom: 1px solid #ddd;
-      font-weight: bold;
-    }
-    main { max-width: 800px; margin: auto; padding: 18px 14px; }
-    .welcome {
-      background: white;
-      padding: 20px;
-      border-radius: 14px;
-      margin-bottom: 20px;
-    }
-    .welcome h2 { margin-top: 0; }
-    .tag {
-      display: inline-block;
-      background: #e4edff;
-      color: #1749a2;
-      padding: 7px 10px;
-      border-radius: 20px;
-      font-size: 13px;
-    }
-    .tests {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 14px;
-    }
-    .card {
-      background: white;
-      padding: 18px;
-      border-radius: 14px;
-      border: 1px solid #e2e8f0;
-    }
-    .card h3 { margin-top: 0; }
-    .card p { color: #58657a; line-height: 1.5; }
-    button {
-      background: #1557c0;
-      color: white;
-      border: 0;
-      border-radius: 8px;
-      padding: 12px 16px;
-      font-size: 15px;
-      font-weight: bold;
-      width: 100%;
-      cursor: pointer;
-    }
-    #message { margin-top: 16px; font-weight: bold; }
-    footer {
-      text-align: center;
-      color: #667085;
-      padding: 24px 12px;
-      font-size: 13px;
-    }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#7b0785">
+<title>Nawal Exam Prep — Mock Test Demo</title>
+<style>
+:root{--purple:#800080;--purple2:#5d148e;--pink:#dc0787;--ink:#181722;--muted:#777582;--line:#e7e2eb;--paper:#fffaff;--bg:#f8f5fa;--green:#27945e;--red:#d94c60;--blue:#3279ca;--shadow:0 5px 18px #30134012}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 system-ui,-apple-system,"Segoe UI",Arial,sans-serif}button,select,input{font:inherit}button{cursor:pointer}button:focus-visible,select:focus-visible{outline:3px solid #c79de9;outline-offset:2px}.app{max-width:1080px;margin:0 auto;min-height:100vh;background:var(--paper);box-shadow:0 0 30px #2f153508}.topline{display:flex;align-items:center;justify-content:space-between;padding:16px 22px;border-bottom:1px solid var(--line);background:#fffaff;gap:12px}.brand{display:flex;align-items:center;gap:11px;font-weight:850;letter-spacing:-.4px}.brandmark{display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:linear-gradient(145deg,#5869e9,#8a0889);color:white;font-weight:900;font-size:17px}.brand small{display:block;color:var(--muted);font-size:10px;letter-spacing:1.5px}.quiet{border:0;background:transparent;color:var(--ink);font-size:23px;padding:4px 8px}.page{padding:22px}.view{display:none}.view.active{display:block}.tabs{display:flex;gap:30px;overflow:auto;white-space:nowrap;border-bottom:1px solid #d9d0df;margin:-2px -22px 18px;padding:0 22px}.tab{border:0;background:transparent;padding:14px 0 11px;font-weight:750;color:#77717e;border-bottom:4px solid transparent}.tab.active{color:#17131b;border-bottom-color:var(--purple)}.mockcard{background:#fff;border:1px solid #e9e2eb;border-radius:17px;margin:14px 0;padding:20px 21px;box-shadow:0 4px 13px #1b0a2512}.mocktitle{font-size:19px;font-weight:750;margin:0 0 16px}.meta{display:flex;align-items:center;gap:8px;flex-wrap:wrap;color:#918c98}.sep{height:22px;width:1px;background:#b7afbd}.pill{border-radius:6px;padding:3px 9px;background:#eeeaf0;color:#34303b;font-size:12px;font-weight:750}.pill.free{background:#e9f7e9;color:#287748}.softbtn{border:0;border-radius:9px;background:#e4e1e5;color:#17131b;padding:10px 15px;font-weight:750;margin-top:15px}.primary{border:0;border-radius:10px;color:white;background:linear-gradient(100deg,var(--purple),var(--pink));padding:13px 21px;font-weight:800}.primary:disabled{opacity:.4;cursor:not-allowed}.muted{color:var(--muted)}.intro-title{font-size:23px;line-height:1.35;margin:12px 0 20px}.fieldlabel{display:block;margin:18px 0 8px;font-weight:700}.select{border:1px solid #dcd5e0;border-radius:9px;background:white;padding:12px 15px;min-width:210px;color:var(--ink)}.instructions{padding-left:22px;line-height:1.6}.instructions li{padding:6px 0;margin-bottom:5px}.summarytable{width:100%;border-collapse:collapse;border:1px solid var(--line);border-radius:10px;overflow:hidden;margin:12px 0}.summarytable th,.summarytable td{text-align:left;border-bottom:1px solid var(--line);padding:10px 8px;font-size:13px}.summarytable th{background:#faf7fb}.agree{display:flex;gap:12px;align-items:center;margin:22px 0 24px;max-width:600px}.agree input{accent-color:var(--purple);width:21px;height:21px;flex-shrink:0}.wide{width:100%;font-size:16px;padding:15px}.examhead{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:13px 18px;border-bottom:1px solid var(--line);position:sticky;top:0;background:#fffaff;z-index:3}.examhead-left{display:flex;align-items:center;gap:10px;min-width:0}.tinyicon{width:35px;height:35px;border-radius:50%;display:grid;place-items:center;background:#e8e4fa;color:var(--purple);font-weight:900;flex-shrink:0}.examheading{min-width:0}.examheading small{display:block;font-size:11px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.examheading b{display:block;font-size:14px}.clock{font-variant-numeric:tabular-nums;font-size:18px;font-weight:850;white-space:nowrap}.examtools{display:flex;align-items:center;gap:5px}.langselect{border:0;background:transparent;font-weight:800;padding:7px 5px;max-width:110px}.iconbtn{border:0;background:transparent;padding:5px 8px;font-size:22px;color:#28232c}.exam-content{padding:18px 22px 94px}.exam-subrow{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin:2px 0 18px}.sectionselect{background:transparent;border:0;font-weight:750;max-width:55%;padding:3px}.qnrow{display:flex;align-items:center;gap:12px;flex-wrap:wrap;font-weight:800}.marks{color:#45a264;font-weight:700}.negmarks{color:#db5b65;font-weight:700}.secttime{margin-left:auto;color:#27212d;font-variant-numeric:tabular-nums}.passage{font-weight:800;font-size:18px;line-height:1.6;margin:22px 0 15px}.question{font-size:19px;font-weight:750;line-height:1.6;margin:13px 0 24px;white-space:pre-line}.options{display:grid;gap:13px;margin:20px 0 28px}.option{display:flex;align-items:flex-start;gap:13px;text-align:left;padding:10px 4px;background:transparent;border:0;border-radius:8px;color:var(--ink);min-height:42px}.radio{width:20px;height:20px;border:2px solid #77717e;border-radius:50%;margin-top:2px;flex-shrink:0;display:grid;place-items:center}.option.selected .radio{border-color:var(--purple)}.option.selected .radio:after{content:"";width:10px;height:10px;border-radius:50%;background:var(--purple)}.option.selected{background:#fbf5ff}.optlabel{line-height:1.55}.exam-footer{position:fixed;bottom:0;left:0;right:0;z-index:5;display:flex;justify-content:center;padding:10px 14px calc(10px + env(safe-area-inset-bottom));background:#fffaffeb;backdrop-filter:blur(8px);border-top:1px solid var(--line)}.exam-footer-inner{width:100%;max-width:1040px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px}.exam-footer button{border:1.5px solid #35313a;border-radius:10px;background:transparent;padding:13px 7px;font-weight:800}.exam-footer .nextbtn{background:var(--purple);border-color:var(--purple);color:white}.exam-footer .markbtn.marked{background:#efe4fb;color:var(--purple);border-color:var(--purple)}.drawerback{position:fixed;inset:0;background:#1c102b66;z-index:8;display:none}.drawerback.open{display:block}.drawer{position:fixed;right:0;top:0;bottom:0;width:min(380px,92vw);background:#fffaff;z-index:9;padding:20px;overflow:auto;transform:translateX(105%);transition:transform .18s;box-shadow:-12px 0 36px #190b251a}.drawer.open{transform:translateX(0)}.drawerhead{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}.legend{display:grid;grid-template-columns:1fr 1fr;gap:8px;font-size:12px;color:var(--muted);margin:12px 0 18px}.legend span{display:flex;align-items:center;gap:6px}.state-dot{width:11px;height:11px;border-radius:4px;background:#ebe6ef}.state-dot.answered{background:#20895b}.state-dot.marked{background:#7d3caf}.state-dot.both{background:#e39d23}.palette{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}.pbtn{aspect-ratio:1;border:1px solid #e1dbe5;background:white;border-radius:8px;font-size:13px;font-weight:800;color:#4e4654}.pbtn.answered{background:#20895b;border-color:#20895b;color:white}.pbtn.marked{background:#7d3caf;border-color:#7d3caf;color:white}.pbtn.both{background:#e39d23;border-color:#e39d23;color:white}.pbtn.current{outline:3px solid #e6c5ef;outline-offset:1px}.drawer-actions{display:grid;gap:9px;margin-top:20px}.drawer-actions button{padding:12px;border:1px solid var(--line);border-radius:8px;background:white;font-weight:750}.drawer-actions .submit{background:var(--purple);color:white;border-color:var(--purple)}.resulttop{font-size:16px;font-weight:800;padding:10px 0 20px}.resultbanner{padding:23px;border-radius:17px;background:linear-gradient(135deg,#fff3fa,#f3e9ff);border:1px solid #ecd7ee;margin-bottom:18px}.resultbanner h2{margin:0 0 7px;font-size:27px;color:var(--purple)}.resultscore{font-size:37px;font-weight:900;line-height:1.25}.metricgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.metric{border-radius:15px;min-height:118px;padding:19px;display:flex;gap:14px;align-items:center;box-shadow:var(--shadow)}.metric:nth-child(1){background:#dbf5df;color:#1a713e}.metric:nth-child(2){background:#eadfe9;color:#743047}.metric:nth-child(3){background:#ddecff;color:#276eb0}.metric:nth-child(4){background:#ffdfdf;color:#b52250}.metric:nth-child(5){background:#efeeee;color:#555}.metric:nth-child(6){background:#f0e1d8;color:#7c4433}.metric:nth-child(7){background:#eee4ff;color:#5831a0}.metric:nth-child(8){background:#f5ddfb;color:#85268e}.metric .mi{width:44px;height:44px;border-radius:50%;background:#ffffff90;display:grid;place-items:center;font-size:20px;flex-shrink:0}.metric small{display:block;font-size:12px;font-weight:700;opacity:.8}.metric b{font-size:21px;display:block;color:#141018}.metric span{font-size:12px;color:inherit}.resultactions{display:grid;grid-template-columns:1fr 1fr;gap:11px;margin:18px 0}.resultactions button{padding:14px;border:0;border-radius:10px;background:var(--purple);color:white;font-weight:800}.resultactions button.secondary{background:#eee5f3;color:#4d275e}.panel{background:white;border:1px solid var(--line);border-radius:15px;padding:18px;margin:15px 0;box-shadow:var(--shadow)}.panel h3{margin:0 0 13px}.section-row{padding:13px 0;border-top:1px solid var(--line)}.section-row:first-of-type{border-top:0}.section-info{display:flex;justify-content:space-between;gap:8px;margin-bottom:8px}.bar{height:7px;background:#eeeaf1;border-radius:9px;overflow:hidden}.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--purple),var(--pink))}.solution-head{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;margin:7px 0 18px}.solcard{border:1px solid var(--line);border-radius:13px;padding:17px;margin:13px 0;background:white}.status{font-weight:800}.status.correct{color:var(--green)}.status.wrong{color:var(--red)}.explain{background:#f8f4fb;border-radius:10px;padding:14px;margin-top:12px;white-space:pre-line}.hide{display:none!important}.footnote{font-size:11px;color:var(--muted);line-height:1.5;padding:12px 0}.right{margin-left:auto}.mobile-only{display:none}
+@media(min-width:760px){.app{border-left:1px solid #eee6f0;border-right:1px solid #eee6f0}.exam-content{max-width:970px;margin:auto}.exam-footer{position:sticky;bottom:0}.exam-footer-inner{max-width:740px}.metricgrid{grid-template-columns:repeat(4,minmax(0,1fr))}.metric{min-height:126px;padding:15px}.mockcard{max-width:900px}}
+@media(max-width:620px){.page{padding:16px}.topline{padding:12px 16px}.brandmark{width:37px;height:37px}.tabs{margin:0 -16px 15px;padding:0 16px;gap:24px}.mocktitle{font-size:17px}.examhead{padding:10px 10px;gap:5px}.examhead-left{gap:7px}.tinyicon{width:31px;height:31px}.examheading b{font-size:12px}.examheading small{max-width:150px;font-size:10px}.examtools{gap:0}.langselect{max-width:84px;font-size:13px}.iconbtn{font-size:20px;padding:4px 5px}.clock{font-size:15px}.exam-content{padding:15px 17px 90px}.passage{font-size:16px}.question{font-size:17px}.exam-footer-inner{gap:7px}.exam-footer button{font-size:13px;padding:12px 4px}.metric{padding:13px;gap:10px;min-height:108px}.metric .mi{width:35px;height:35px;font-size:16px}.metric b{font-size:18px}.metric small{font-size:11px}.metric span{font-size:11px}.resultbanner{padding:19px}.resultscore{font-size:32px}.intro-title{font-size:21px}.summarytable th,.summarytable td{font-size:11px;padding:8px 5px}.mobile-only{display:inline-block}}
+
+/* Nawal Exam Prep — professional polish layer */
+:root{
+ --purple:#79008b;--purple2:#4d176f;--pink:#e00087;--ink:#171521;
+ --muted:#777482;--line:#e8e3ed;--paper:#fff;--bg:#f7f5fa;
+ --green:#218653;--red:#d9465d;--blue:#2874c8;
+ --shadow:0 8px 24px rgba(44,20,63,.09);
+}
+html{scroll-behavior:smooth}
+body{font-family:Inter,Roboto,"Noto Sans Devanagari",system-ui,-apple-system,sans-serif;letter-spacing:-.012em;background:var(--bg);color:var(--ink)}
+button,select,input{font:inherit}
+button{transition:transform .15s ease,box-shadow .15s ease,filter .15s ease}
+button:active{transform:scale(.985)}
+button:focus-visible,select:focus-visible,input:focus-visible{outline:3px solid #cba4ef;outline-offset:2px}
+.topline{position:sticky;top:0;z-index:30;background:rgba(255,255,255,.94);backdrop-filter:blur(14px);border-bottom:1px solid #ece6f0;box-shadow:0 2px 12px #25112b08}
+.topline>*{max-width:1120px;margin-inline:auto}
+.page{max-width:1120px;padding:20px 16px 42px}
+.view{animation:fadeUp .22s ease}
+@keyframes fadeUp{from{opacity:.45;transform:translateY(5px)}to{opacity:1;transform:translateY(0)}}
+h1,h2,h3{letter-spacing:-.035em}
+.mockcard,.panel,.instruction-card,.result-card,.analysis-card,.solution-card,.stat-card,.section-card{border:1px solid rgba(226,218,234,.9)!important;border-radius:20px!important;background:#fff;box-shadow:var(--shadow)!important}
+.mockcard{padding:22px!important;position:relative;overflow:hidden}
+.mockcard:before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:linear-gradient(180deg,var(--purple),var(--pink))}
+.mockcard:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(44,20,63,.13)!important}
+.tab{border-radius:999px!important;padding:10px 17px!important;font-weight:700}
+.tab.active{background:#f0def7!important;color:var(--purple)!important;box-shadow:inset 0 0 0 1px #e3c9ef}
+.primary,.nextbtn,.resultactions button,.continuebtn{background:linear-gradient(110deg,var(--purple2),var(--pink))!important;border:0!important;color:white!important;border-radius:13px!important;font-weight:750!important;box-shadow:0 5px 12px #79008b24}
+.secondary,.exam-footer button,.pbtn{border-radius:12px!important}
+.intro-title{font-size:clamp(23px,4vw,32px)!important;line-height:1.22!important}
+.instruction-list{line-height:1.65}
+.langselect,.select,select{border:1px solid #ddd5e5!important;border-radius:12px!important;background:#fff!important;padding:11px 14px!important;min-height:46px}
+.examhead{position:sticky;top:65px;z-index:20;background:rgba(255,255,255,.96)!important;backdrop-filter:blur(12px);border-bottom:1px solid #e9e2ee!important;box-shadow:0 4px 15px #21102b08}
+.examhead button{border-radius:10px!important}
+.exam-title{font-weight:750}
+.question-meta{font-variant-numeric:tabular-nums}
+#question,.question-text{line-height:1.75!important;font-size:19px}
+.option,.option-row,.answer-option{border:1px solid #e6e0eb!important;border-radius:14px!important;padding:14px!important;background:#fff!important;margin:10px 0!important}
+.option:hover,.option-row:hover,.answer-option:hover{border-color:#b887d0!important;background:#fcf7ff!important}
+.option.selected,.option.correct,.option-row.selected,.answer-option.selected{border-color:var(--purple)!important;background:#f5e9fb!important}
+.exam-footer{background:rgba(255,255,255,.97)!important;backdrop-filter:blur(10px);border-top:1px solid #e7e0eb!important;box-shadow:0 -5px 18px #20102b08}
+.exam-footer-inner{max-width:900px;margin:auto}
+.exam-footer button{min-height:48px;font-weight:700!important}
+.resultactions{gap:12px}
+.resultactions button{min-height:48px;padding:12px 20px}
+.stat-card{padding:18px!important;min-height:118px}
+.stat-card .value{font-size:clamp(22px,5vw,30px)!important;font-weight:800}
+.analysis-card{padding:20px!important}
+.analysis-heading{background:linear-gradient(110deg,var(--purple2),var(--purple))!important;color:#fff!important;border-radius:16px 16px 0 0!important}
+.pbtn{width:42px!important;height:42px!important;font-weight:750!important}
+.pbtn.current{outline:3px solid #d9b6ec!important;outline-offset:1px}
+.pbtn.answered{background:#218653!important;color:white!important}
+.pbtn.marked{background:#e5a323!important;color:#231a05!important}
+.pbtn.both{background:#2781c7!important;color:white!important}
+.pbtn:not(.answered):not(.marked):not(.both):not(.current){background:#f3f0f6!important}
+.drawer,.drawer-panel{border-radius:22px 22px 0 0!important}
+.badge,.chip{border-radius:8px!important;font-weight:700}
+hr,.divider{border-color:#ece6f0!important}
+footer{color:#817b89}
+@media(min-width:760px){
+ .page{padding-top:28px}
+ .mockgrid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .exam-layout{display:grid;grid-template-columns:minmax(0,1fr) 250px;gap:22px;align-items:start}
+}
+@media(max-width:560px){
+ .page{padding:14px 12px 30px}
+ .mockcard{padding:18px!important}
+ .examhead{top:55px}
+ #question,.question-text{font-size:18px}
+ .exam-footer-inner{gap:8px!important;padding:8px 10px!important}
+ .exam-footer button{padding:10px 8px!important;min-width:0}
+ .stat-card{min-height:104px;padding:14px!important}
+}
+
+</style>
 </head>
 <body>
-  <header>
-    <h1>NAWAL EXAM PREP</h1>
-    <p>Your preparation. Your progress. Your success.</p>
+<div class="app">
+  <header class="topline">
+    <div class="brand"><div class="brandmark">N</div><div>NAWAL EXAM PREP<small>SSC · BANKING · PRACTICE</small></div></div>
+    <button class="quiet" title="Home" onclick="goHome()">⌂</button>
   </header>
 
-  <nav>Home &nbsp; | &nbsp; Mock Tests &nbsp; | &nbsp; Practice</nav>
-
-  <main>
-    <section class="welcome">
-      <span class="tag">COMPETITIVE EXAM PREPARATION</span>
-      <h2>Welcome to Nawal Exam Prep!</h2>
-      <p>Prepare for competitive exams with practice tests and improve your performance step by step.</p>
+  <main class="page">
+    <section id="library" class="view active">
+      <div class="tabs">
+        <button class="tab active" onclick="setTab('full',this)">Full Length Test</button>
+        <button class="tab" onclick="setTab('starter',this)">Starter Mock</button>
+        <button class="tab" onclick="setTab('sectional',this)">Sectional Test</button>
+      </div>
+      <div id="mockList">
+        <article class="mockcard" data-kind="full">
+          <h2 class="mocktitle">SSC CGL Tier-I · Practice Mock 1</h2>
+          <div class="meta"><span>Ques: 20</span><span class="sep"></span><span>Time: 20 mins</span><span class="sep"></span><span class="pill free">Free demo</span><span class="pill">Mixed level</span></div>
+          <button class="softbtn" onclick="prepare('ssc')">Take Test</button>
+        </article>
+        <article class="mockcard" data-kind="full">
+          <h2 class="mocktitle">Banking Prelims · Practice Mock 1</h2>
+          <div class="meta"><span>Ques: 20</span><span class="sep"></span><span>Time: 20 mins</span><span class="sep"></span><span class="pill free">Free demo</span><span class="pill">Mixed level</span></div>
+          <button class="softbtn" onclick="prepare('bank')">Take Test</button>
+        </article>
+        <article class="mockcard" data-kind="starter">
+          <h2 class="mocktitle">Daily Quick Practice · Starter 1</h2>
+          <div class="meta"><span>Ques: 10</span><span class="sep"></span><span>Time: 10 mins</span><span class="sep"></span><span class="pill free">Free</span><span class="pill">Starter</span></div>
+          <button class="softbtn" onclick="prepare('quick')">Take Test</button>
+        </article>
+        <article class="mockcard" data-kind="sectional">
+          <h2 class="mocktitle">Quantitative Aptitude · Sectional 1</h2>
+          <div class="meta"><span>Ques: 6</span><span class="sep"></span><span>Time: 8 mins</span><span class="sep"></span><span class="pill free">Free demo</span><span class="pill">Sectional</span></div>
+          <button class="softbtn" onclick="prepare('quant')">Take Test</button>
+        </article>
+        <article class="mockcard" data-kind="sectional">
+          <h2 class="mocktitle">Reasoning Ability · Sectional 1</h2>
+          <div class="meta"><span>Ques: 5</span><span class="sep"></span><span>Time: 7 mins</span><span class="sep"></span><span class="pill free">Free demo</span><span class="pill">Sectional</span></div>
+          <button class="softbtn" onclick="prepare('reason')">Take Test</button>
+        </article>
+      </div>
+      <p class="footnote">Interactive demo only. Question counts, scoring and timings here are demo settings, not an official exam notification. The mock bank is not yet large enough for paid exam preparation.</p>
     </section>
 
-    <h2>Explore Mock Tests</h2>
-    <section class="tests">
-      <article class="card">
-        <h3>SSC CGL</h3>
-        <p>Practice questions for Quantitative Aptitude, Reasoning, English and General Awareness.</p>
-        <button onclick="showMessage('SSC CGL mock tests will be added soon.')">Explore Tests</button>
-      </article>
-
-      <article class="card">
-        <h3>Banking Exams</h3>
-        <p>Prepare for banking exams with Quant, Reasoning and English practice.</p>
-        <button onclick="showMessage('Banking mock tests will be added soon.')">Explore Tests</button>
-      </article>
-
-      <article class="card">
-        <h3>Daily Practice</h3>
-        <p>Build a regular study habit with topic-wise practice.</p>
-        <button onclick="showMessage('Daily practice questions will be added soon.')">Start Practice</button>
-      </article>
+    <section id="instructions" class="view">
+      <button class="quiet" onclick="goLibrary()" aria-label="Back">←</button>
+      <h1 class="intro-title" id="introTitle">SSC CGL Tier-I · Practice Mock 1</h1>
+      <label class="fieldlabel" for="introLang">Select Language</label>
+      <select class="select" id="introLang" onchange="setLanguage(this.value)"><option value="en">English</option><option value="hi">हिंदी</option></select>
+      <h2 style="font-size:18px;margin-top:30px">INSTRUCTIONS / निर्देश</h2>
+      <ol class="instructions">
+        <li>The demo timer starts when you press Continue.</li>
+        <li>Use the language menu during the test to switch between available English and Hindi translations.</li>
+        <li>Use the question palette to jump to any question. Answers are saved as you select an option.</li>
+        <li>Use “Mark” to flag a question for review. You can change your answer before submitting.</li>
+        <li>Submitting the test ends the attempt. You can then open the result analysis or question-wise solutions.</li>
+      </ol>
+      <table class="summarytable"><thead><tr><th>Name of the Test</th><th>Qns</th><th>Marks</th><th>Duration</th></tr></thead><tbody><tr><td id="tableName">Practice Mock</td><td id="tableQ">20</td><td id="tableM">20</td><td id="tableTime">20 Min</td></tr></tbody></table>
+      <div class="agree"><input id="agree" type="checkbox"><label for="agree">I have read all the instructions carefully and agree to them.</label></div>
+      <button id="continueBtn" class="primary wide" disabled onclick="beginTest()">Continue</button>
     </section>
 
-    <p id="message" aria-live="polite"></p>
+    <section id="exam" class="view" style="padding:0">
+      <header class="examhead">
+        <div class="examhead-left">
+          <button class="iconbtn" title="Pause timer" onclick="togglePause()" id="pauseBtn">Ⅱ</button>
+          <div class="clock" id="clock">20:00</div>
+        </div>
+        <div class="examheading"><b id="examName">Practice Mock</b><small id="examSub">NAWAL EXAM PREP · DEMO</small></div>
+        <div class="examtools">
+          <button class="iconbtn" title="Change text size" onclick="cycleFont()">Tт</button>
+          <select id="examLang" class="langselect" aria-label="Question language" onchange="setLanguage(this.value)"><option value="en">Eng ▼</option><option value="hi">हिंदी ▼</option></select>
+          <button class="iconbtn" title="Question palette and actions" onclick="openDrawer()">☰</button>
+        </div>
+      </header>
+      <div class="exam-content">
+        <div class="exam-subrow">
+          <select id="sectionSelect" class="sectionselect" aria-label="Jump to section" onchange="jumpSection(this.value)"></select>
+          <div class="qnrow"><span id="qn">Qn: 1/20</span><span class="marks">+1</span><span class="negmarks">−0.25</span><span class="secttime" id="questionTimer">◷ 00:00</span></div>
+        </div>
+        <div id="passage" class="passage hide"></div>
+        <div id="question" class="question">Question text</div>
+        <div id="options" class="options"></div>
+      </div>
+      <div class="exam-footer"><div class="exam-footer-inner">
+        <button onclick="previousQuestion()">Previous</button>
+        <button id="markBtn" class="markbtn" onclick="markQuestion()">Mark</button>
+        <button class="nextbtn" onclick="nextQuestion()">Next</button>
+      </div></div>
+    </section>
+
+    <section id="result" class="view">
+      <div class="resulttop">Result — <span id="resultTitle">Practice Mock</span></div>
+      <div class="resultbanner">
+        <div class="muted" id="resultGreeting">Test completed</div>
+        <h2 id="resultMood">Keep Going!</h2>
+        <div class="resultscore" id="finalScore">0/20</div>
+        <div id="resultLine">Your score and attempt summary are below.</div>
+        <p style="margin:9px 0 0" class="muted" id="cutoffLine">Demo report · No real rank or percentile available</p>
+      </div>
+      <div class="metricgrid">
+        <div class="metric"><div class="mi">🏅</div><div><small>Score</small><b id="scoreMetric">0/20</b></div></div>
+        <div class="metric"><div class="mi">✍</div><div><small>Attempted</small><b id="attemptMetric">0/20</b></div></div>
+        <div class="metric"><div class="mi">✓</div><div><small>Correct</small><b id="correctMetric">0/20</b></div></div>
+        <div class="metric"><div class="mi">✕</div><div><small>Incorrect</small><b id="wrongMetric">0/20</b></div></div>
+        <div class="metric"><div class="mi">↪</div><div><small>Skipped</small><b id="skippedMetric">0/20</b></div></div>
+        <div class="metric"><div class="mi">◉</div><div><small>Unseen</small><b id="unseenMetric">0/20</b></div></div>
+        <div class="metric"><div class="mi">◎</div><div><small>Accuracy</small><b id="accuracyMetric">0%</b></div></div>
+        <div class="metric"><div class="mi">◴</div><div><small>Total Time</small><b id="usedMetric">0m 0s</b></div></div>
+      </div>
+      <div class="resultactions"><button onclick="showAnalysis()">Analysis</button><button onclick="showSolutions()">Solution</button></div>
+      <p class="footnote">Rank, percentile, selection probability and toppers benchmark are not shown because this prototype has no verified cohort of test takers. Those features can be added after the platform has real student data.</p>
+      <button class="primary wide" onclick="prepare(lastType)">Reattempt</button>
+      <button class="softbtn" onclick="goLibrary()">Back to Mock Tests</button>
+    </section>
+
+    <section id="analysis" class="view">
+      <button class="quiet" onclick="showResult()">←</button>
+      <h1 class="intro-title">Analysis — <span id="analysisTitle"></span></h1>
+      <div class="panel">
+        <h3>Section-wise performance</h3>
+        <div id="sectionPerformance"></div>
+      </div>
+      <div class="panel">
+        <h3>Overall performance</h3>
+        <div id="overallPerformance"></div>
+      </div>
+      <div class="panel">
+        <h3>What to practise next</h3>
+        <div id="recommendation"></div>
+      </div>
+      <div class="resultactions"><button onclick="showSolutions()">Solution</button><button class="secondary" onclick="prepare(lastType)">Reattempt</button></div>
+    </section>
+
+    <section id="solutions" class="view">
+      <button class="quiet" onclick="showResult()">←</button>
+      <div class="solution-head">
+        <h1 class="intro-title" style="margin:0">Solution &amp; Review</h1>
+        <select id="solutionLang" class="select" onchange="setSolutionLanguage(this.value)"><option value="en">English</option><option value="hi">हिंदी</option></select>
+      </div>
+      <div class="meta"><span id="solutionProgress">Question 1</span><span class="sep"></span><span id="solutionStatus">Correct answer</span></div>
+      <div id="solutionQuestion" class="question"></div>
+      <div id="solutionOptions" class="options"></div>
+      <div class="panel"><h3 id="explanationTitle">Explanation</h3><div id="solutionExplanation"></div></div>
+      <div class="exam-footer" style="position:sticky"><div class="exam-footer-inner"><button onclick="solutionPrev()">Previous</button><button onclick="showAnalysis()">Analysis</button><button class="nextbtn" onclick="solutionNext()">Next</button></div></div>
+    </section>
   </main>
+</div>
 
-  <footer>© 2026 Nawal Exam Prep · Learn, Practice, Improve</footer>
+<div id="drawerBack" class="drawerback" onclick="closeDrawer()"></div>
+<aside id="drawer" class="drawer" aria-label="Question palette">
+  <div class="drawerhead"><h2 style="margin:0;font-size:19px">Question Palette</h2><button class="quiet" onclick="closeDrawer()">×</button></div>
+  <div class="muted" style="font-size:12px" id="paletteProgress">0 answered</div>
+  <div class="legend"><span><i class="state-dot answered"></i>Answered</span><span><i class="state-dot"></i>Not answered</span><span><i class="state-dot marked"></i>Marked</span><span><i class="state-dot both"></i>Answered &amp; marked</span></div>
+  <div id="palette" class="palette"></div>
+  <div class="drawer-actions"><button onclick="clearCurrentAnswer();closeDrawer()">Clear current answer</button><button class="submit" onclick="closeDrawer();confirmSubmit()">Submit Test</button></div>
+</aside>
+<div id="pauseOverlay" class="drawerback" style="display:none;z-index:11;background:#190e23aa" onclick="resumeTimer()">
+  <div style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);background:white;border-radius:17px;padding:25px;text-align:center;width:min(330px,90vw)" onclick="event.stopPropagation()"><h2>Test Paused</h2><p>Your timer is paused.</p><button class="primary" onclick="resumeTimer()">Resume Test</button></div>
+</div>
 
-  <script>
-    function showMessage(message) {
-      document.getElementById('message').textContent = message;
-    }
-  </script>
+<script>
+const Q = (section, en, hi, optsEn, optsHi, answer, expEn, expHi) => ({section,en,hi,optsEn,optsHi,answer,expEn,expHi});
+const bank = [
+Q("Quantitative Aptitude","What is 25% of 240?","240 का 25% कितना है?",["40","50","60","80"],["40","50","60","80"],2,"25% of 240 = 240 × 25/100 = 60.","240 का 25% = 240 × 25/100 = 60।"),
+Q("Quantitative Aptitude","A number increases from 80 to 100. What is the percentage increase?","एक संख्या 80 से बढ़कर 100 हो जाती है। प्रतिशत वृद्धि कितनी है?",["20%","25%","30%","35%"],["20%","25%","30%","35%"],1,"Increase = 100 − 80 = 20. Percentage increase = 20/80 × 100 = 25%.","वृद्धि = 100 − 80 = 20। प्रतिशत वृद्धि = 20/80 × 100 = 25%।"),
+Q("Quantitative Aptitude","The average of 12, 18, 20 and 30 is:","12, 18, 20 और 30 का औसत कितना है?",["18","20","22","24"],["18","20","22","24"],1,"Average = (12 + 18 + 20 + 30) ÷ 4 = 20.","औसत = (12 + 18 + 20 + 30) ÷ 4 = 20।"),
+Q("Quantitative Aptitude","A shopkeeper gives a 10% discount on ₹800. What is the selling price?","एक दुकानदार ₹800 पर 10% की छूट देता है। विक्रय मूल्य कितना होगा?",["₹700","₹710","₹720","₹740"],["₹700","₹710","₹720","₹740"],2,"Discount = ₹80. Selling price = ₹800 − ₹80 = ₹720.","छूट = ₹80। विक्रय मूल्य = ₹800 − ₹80 = ₹720।"),
+Q("Quantitative Aptitude","The ratio of 24 to 36 in simplest form is:","24 और 36 का सरलतम अनुपात क्या है?",["2:3","3:2","4:5","6:9"],["2:3","3:2","4:5","6:9"],0,"Divide both terms by 12. The simplest ratio is 2:3.","दोनों पदों को 12 से भाग देने पर सरलतम अनुपात 2:3 होगा।"),
+Q("Quantitative Aptitude","A train covers 120 km in 2 hours. Its average speed is:","एक ट्रेन 2 घंटे में 120 किमी चलती है। उसकी औसत गति कितनी है?",["40 km/h","50 km/h","60 km/h","70 km/h"],["40 किमी/घंटा","50 किमी/घंटा","60 किमी/घंटा","70 किमी/घंटा"],2,"Speed = distance ÷ time = 120 ÷ 2 = 60 km/h.","गति = दूरी ÷ समय = 120 ÷ 2 = 60 किमी/घंटा।"),
+Q("Reasoning Ability","Find the next number: 3, 8, 15, 24, 35, ?","अगली संख्या ज्ञात कीजिए: 3, 8, 15, 24, 35, ?",["44","46","48","50"],2,"The differences are 5, 7, 9, 11. The next difference is 13, so 35 + 13 = 48.","अंतर 5, 7, 9, 11 हैं। अगला अंतर 13 होगा, इसलिए 35 + 13 = 48।"),
+Q("Reasoning Ability","Complete the series: AZ, BY, CX, DW, ?","श्रृंखला पूरी कीजिए: AZ, BY, CX, DW, ?",["EV","EU","FV","EW"],0,"The first letter moves forward and the second moves backward: EV.","पहला अक्षर आगे और दूसरा अक्षर पीछे जाता है। अगला पद EV है।"),
+Q("Reasoning Ability","Which one is different from the others?","इनमें से कौन-सा विकल्प बाकी से अलग है?",["Triangle / त्रिभुज","Square / वर्ग","Circle / वृत्त","Rectangle / आयत"],2,"A circle has no straight sides or vertices; the others are polygons.","वृत्त की सीधी भुजाएँ या शीर्ष नहीं होते, जबकि बाकी बहुभुज हैं।"),
+Q("Reasoning Ability","Ravi is taller than Amit. Amit is taller than Karan. Who is the shortest?","रवि, अमित से लंबा है। अमित, करण से लंबा है। सबसे छोटा कौन है?",["Ravi / रवि","Amit / अमित","Karan / करण","Cannot say / नहीं कह सकते"],2,"Ravi > Amit > Karan, so Karan is the shortest.","क्रम रवि > अमित > करण है, इसलिए करण सबसे छोटा है।"),
+Q("Reasoning Ability","If CAT is coded as DBU, how is DOG coded using the same rule?","यदि CAT को DBU लिखा जाता है, तो उसी नियम से DOG को कैसे लिखा जाएगा?",["EPH","EOG","DPH","FPH"],0,"Each letter is shifted one place forward: D→E, O→P, G→H.","हर अक्षर को एक स्थान आगे बढ़ाया गया है: D→E, O→P, G→H।"),
+Q("General Awareness","The Constitution of India came into effect on:","भारत का संविधान किस दिन लागू हुआ?",["15 August 1947 / 15 अगस्त 1947","26 January 1950 / 26 जनवरी 1950","26 November 1949 / 26 नवंबर 1949","2 October 1950 / 2 अक्टूबर 1950"],1,"The Constitution of India came into effect on 26 January 1950.","भारत का संविधान 26 जनवरी 1950 को लागू हुआ।"),
+Q("General Awareness","Which is the largest planet in our solar system?","हमारे सौरमंडल का सबसे बड़ा ग्रह कौन-सा है?",["Earth / पृथ्वी","Saturn / शनि","Jupiter / बृहस्पति","Neptune / नेपच्यून"],2,"Jupiter is the largest planet in our solar system.","बृहस्पति हमारे सौरमंडल का सबसे बड़ा ग्रह है।"),
+Q("General Awareness","Which gas do plants absorb during photosynthesis?","प्रकाश संश्लेषण के दौरान पौधे कौन-सी गैस ग्रहण करते हैं?",["Oxygen / ऑक्सीजन","Nitrogen / नाइट्रोजन","Carbon dioxide / कार्बन डाइऑक्साइड","Hydrogen / हाइड्रोजन"],2,"Plants absorb carbon dioxide during photosynthesis.","प्रकाश संश्लेषण के दौरान पौधे कार्बन डाइऑक्साइड ग्रहण करते हैं।"),
+Q("English Language","Choose the grammatically correct sentence.","व्याकरण की दृष्टि से सही अंग्रेज़ी वाक्य चुनिए।",["She do her work daily.","She does her work daily.","She doing her work daily.","She done her work daily."],1,"With third-person singular 'she', the simple present uses 'does'.","Simple Present Tense में 'she' के साथ 'does' का प्रयोग होता है।"),
+Q("English Language","Choose the synonym of “brief”.","“Brief” का समानार्थी शब्द चुनिए।",["Lengthy","Concise","Unclear","Distant"],1,"Brief means short or concise.","Brief का अर्थ छोटा या संक्षिप्त होता है।"),
+Q("English Language","Choose the antonym of “expand”.","“Expand” का विलोम शब्द चुनिए।",["Extend","Enlarge","Contract","Increase"],2,"Contract means to become smaller; it is the opposite of expand.","Contract का अर्थ सिकुड़ना है; यह expand का विलोम है।"),
+Q("English Language","Choose the correct word: “Neither of the answers ___ correct.”","सही शब्द चुनिए: “Neither of the answers ___ correct.”",["are","were","is","have"],2,"In this sentence, 'neither' is treated as singular, so 'is' is correct.","इस वाक्य में 'neither' एकवचन है, इसलिए 'is' सही है।"),
+Q("English Language","Choose the correctly spelled word.","सही वर्तनी वाला शब्द चुनिए।",["Accomodate","Acommodate","Accommodate","Acomoddate"],2,"The correct spelling is 'accommodate'.","सही वर्तनी 'accommodate' है।"),
+Q("English Language","Choose the best meaning of “rapid”.","“Rapid” का सही अर्थ चुनिए।",["Slow","Quick","Weak","Late"],1,"Rapid means fast or quick.","Rapid का अर्थ तेज़ होता है।")
+];
+const configs={
+ ssc:{title:"SSC CGL Tier-I · Practice Mock 1",time:20,indices:[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19],m:1,neg:.25},
+ bank:{title:"Banking Prelims · Practice Mock 1",time:20,indices:[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19],m:1,neg:.25},
+ quick:{title:"Daily Quick Practice · Starter 1",time:10,indices:[0,2,4,6,8,10,12,14,16,18],m:1,neg:0},
+ quant:{title:"Quantitative Aptitude · Sectional 1",time:8,indices:[0,1,2,3,4,5],m:1,neg:.25},
+ reason:{title:"Reasoning Ability · Sectional 1",time:7,indices:[6,7,8,9,10],m:1,neg:.25}
+};
+let lastType="ssc",items=[],answers=[],marked=new Set(),visited=new Set(),questionTimes=[],index=0,seconds=1200,initialSeconds=1200,interval=null,paused=false,lang="en",font=19,submitted=false,reviewIndex=0;
+const L={
+ en:{q:"Qn",of:"of",previous:"Previous",next:"Next",mark:"Mark",marked:"Marked",clear:"Clear answer",expl:"Explanation",correct:"Correct",wrong:"Incorrect",unanswered:"Not answered",submit:"Submit Test",remaining:"Time",section:"Section"},
+ hi:{q:"प्रश्न",of:"में से",previous:"पिछला",next:"अगला",mark:"Mark",marked:"Marked",clear:"उत्तर हटाएँ",expl:"समाधान",correct:"सही",wrong:"गलत",unanswered:"उत्तर नहीं दिया",submit:"टेस्ट सबमिट करें",remaining:"समय",section:"अनुभाग"}
+};
+function $(id){return document.getElementById(id)}
+function escapeHtml(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function show(id){document.querySelectorAll('.view').forEach(x=>x.classList.remove('active'));$(id).classList.add('active');window.scrollTo({top:0,behavior:'smooth'})}
+function goHome(){if($('exam').classList.contains('active')&&!submitted){if(!confirm('Exit the current test? Your current attempt will be lost.'))return}stopClock();closeDrawer();show('library')}
+function goLibrary(){stopClock();show('library')}
+function setTab(kind,btn){document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));btn.classList.add('active');document.querySelectorAll('.mockcard').forEach(card=>{card.style.display=card.dataset.kind===kind?'block':'none'})}
+function prepare(type){lastType=type;let c=configs[type];$('introTitle').textContent=c.title;$('tableName').textContent=c.title;$('tableQ').textContent=c.indices.length;$('tableM').textContent=c.indices.length*c.m;$('tableTime').textContent=c.time+' Min';$('agree').checked=false;$('continueBtn').disabled=true;$('introLang').value=lang;setLanguage(lang);show('instructions')}
+$('agree').addEventListener('change',()=>{$('continueBtn').disabled=!$('agree').checked});
+function beginTest(){
+ let c=configs[lastType];items=c.indices.map(i=>bank[i]);answers=Array(items.length).fill(null);marked=new Set();visited=new Set();questionTimes=Array(items.length).fill(0);index=0;seconds=c.time*60;initialSeconds=seconds;paused=false;submitted=false;lang=$('introLang').value;
+ $('examName').textContent=c.title;$('examSub').textContent='NAWAL EXAM PREP · PRACTICE MODE';$('examLang').value=lang;
+ $('pauseBtn').textContent='Ⅱ';$('pauseOverlay').style.display='none';$('pauseOverlay').classList.remove('open');
+ $('exam').style.padding='0';buildSectionSelect();renderQuestion();show('exam');startClock();
+}
+function startClock(){stopClock();updateClock();interval=setInterval(()=>{if(!paused&&!submitted){seconds--;if(questionTimes[index]!==undefined)questionTimes[index]++;updateClock();updateQuestionTimer();if(seconds<=0){seconds=0;updateClock();submitTest(true)}}},1000)}
+function stopClock(){if(interval){clearInterval(interval);interval=null}}
+function updateClock(){let s=Math.max(0,seconds),mm=String(Math.floor(s/60)).padStart(2,'0'),ss=String(s%60).padStart(2,'0');$('clock').textContent=mm+':'+ss;$('clock').style.color=s<60?'#d92f4f':'inherit';updateQuestionTimer()}
+function updateQuestionTimer(){let t=questionTimes[index]||0,mm=String(Math.floor(t/60)).padStart(2,'0'),ss=String(t%60).padStart(2,'0');$('questionTimer').textContent='◷ '+mm+':'+ss}
+function togglePause(){if(submitted)return;paused=true;$('pauseOverlay').style.display='block';$('pauseOverlay').classList.add('open')}
+function resumeTimer(){paused=false;$('pauseOverlay').style.display='none';$('pauseOverlay').classList.remove('open')}
+function setLanguage(value){lang=value;['introLang','examLang','solutionLang'].forEach(id=>{if($(id))$(id).value=value});if($('exam').classList.contains('active'))renderQuestion();if($('solutions').classList.contains('active'))renderSolution()}
+function cycleFont(){font=font>=23?17:font+2;$('question').style.fontSize=font+'px'}
+function buildSectionSelect(){let secs=[...new Set(items.map(q=>q.section))];$('sectionSelect').innerHTML=secs.map(s=>`<option value="${escapeHtml(s)}">${lang==='hi'?translateSection(s):s}</option>`).join('')}
+function translateSection(s){return ({'Quantitative Aptitude':'गणितीय योग्यता','Reasoning Ability':'तार्किक क्षमता','General Awareness':'सामान्य जागरूकता','English Language':'अंग्रेज़ी भाषा'})[s]||s}
+function jumpSection(section){let idx=items.findIndex(q=>q.section===section);if(idx>=0){index=idx;renderQuestion()}}
+function renderQuestion(){
+ let q=items[index];visited.add(index);let text=lang==='hi'?q.hi:q.en,opts=lang==='hi'?q.optsHi:q.optsEn;
+ $('sectionSelect').value=q.section;$('qn').textContent=`${L[lang].q}: ${index+1}/${items.length}`;
+ $('question').textContent=text;$('question').style.fontSize=font+'px';
+ $('options').innerHTML=opts.map((op,j)=>`<button class="option ${answers[index]===j?'selected':''}" onclick="choose(${j})"><span class="radio"></span><span class="optlabel">${escapeHtml(op)}</span></button>`).join('');
+ $('markBtn').textContent=marked.has(index)?L[lang].marked:L[lang].mark;$('markBtn').classList.toggle('marked',marked.has(index));
+ renderPalette();updateProgress();
+ $('passage').classList.add('hide');
+}
+function choose(j){if(submitted)return;answers[index]=j;renderQuestion()}
+function previousQuestion(){if(index>0){index--;renderQuestion()}}
+function nextQuestion(){if(index<items.length-1){index++;renderQuestion()}else confirmSubmit()}
+function markQuestion(){if(marked.has(index))marked.delete(index);else marked.add(index);if(index<items.length-1)index++;renderQuestion()}
+function clearCurrentAnswer(){answers[index]=null;renderQuestion()}
+function openDrawer(){renderPalette();$('drawer').classList.add('open');$('drawerBack').classList.add('open')}
+function closeDrawer(){$('drawer').classList.remove('open');$('drawerBack').classList.remove('open')}
+function renderPalette(){$('palette').innerHTML=items.map((q,i)=>{let cl=answers[i]!==null&&marked.has(i)?'both':answers[i]!==null?'answered':marked.has(i)?'marked':'';return `<button class="pbtn ${cl} ${i===index?'current':''}" onclick="goQuestion(${i})">${i+1}</button>`}).join('');updateProgress()}
+function goQuestion(i){index=i;closeDrawer();renderQuestion()}
+function updateProgress(){let a=answers.filter(x=>x!==null).length;$('paletteProgress').textContent=`${a} answered · ${items.length-a} not answered`}
+function confirmSubmit(){let unanswered=answers.filter(x=>x===null).length;if(confirm(`Submit this test now?\nUnanswered: ${unanswered}\nYou cannot change answers after submitting.`))submitTest(false)}
+function submitTest(auto){
+ if(submitted)return;submitted=true;stopClock();paused=false;$('pauseOverlay').style.display='none';$('pauseOverlay').classList.remove('open');closeDrawer();
+ let correct=0,wrong=0,skipped=0;items.forEach((q,i)=>{if(answers[i]===null)skipped++;else if(answers[i]===q.answer)correct++;else wrong++});
+ let unseen=items.length-visited.size;skipped=Math.max(0,skipped-unseen);let attempted=correct+wrong, c=configs[lastType],max=items.length*c.m,raw=correct*c.m-wrong*c.neg,score=Math.round(raw*100)/100,accuracy=attempted?Math.round(correct/attempted*100):0;
+ $('resultTitle').textContent=c.title;$('finalScore').textContent=`${score} / ${max}`;$('resultGreeting').textContent=auto?'Time is up!':'Mock test submitted';
+ $('resultMood').textContent=accuracy>=80?'Excellent work!':accuracy>=55?'Good effort — keep practising':'Keep going!';$('resultLine').textContent=`Your score: ${score} · ${correct} correct · ${wrong} incorrect`;
+ $('cutoffLine').textContent='Demo report · Rank and percentile are unavailable without real test-taker data';
+ $('scoreMetric').textContent=`${score}/${max}`;$('attemptMetric').textContent=`${attempted}/${items.length}`;$('correctMetric').textContent=`${correct}/${items.length}`;$('wrongMetric').textContent=`${wrong}/${items.length}`;$('skippedMetric').textContent=`${skipped}/${items.length}`;$('unseenMetric').textContent=`${unseen}/${items.length}`;$('accuracyMetric').textContent=`${accuracy}%`;
+ let elapsed=Math.max(0,initialSeconds-seconds);$('usedMetric').textContent=`${Math.floor(elapsed/60)}m ${elapsed%60}s`;
+ renderAnalysis();reviewIndex=0;$('solutionLang').value=lang;show('result');
+}
+function renderAnalysis(){
+ let by={};items.forEach((q,i)=>{by[q.section]??={total:0,correct:0,wrong:0,skip:0};by[q.section].total++;if(answers[i]===null)by[q.section].skip++;else if(answers[i]===q.answer)by[q.section].correct++;else by[q.section].wrong++});
+ $('analysisTitle').textContent=configs[lastType].title;
+ $('sectionPerformance').innerHTML=Object.entries(by).map(([name,v])=>{let acc=v.correct+v.wrong?Math.round(v.correct/(v.correct+v.wrong)*100):0;return `<div class="section-row"><div class="section-info"><b>${escapeHtml(lang==='hi'?translateSection(name):name)}</b><span>${v.correct}/${v.total} correct · ${acc}% accuracy</span></div><div class="bar"><i style="width:${acc}%"></i></div><div class="muted" style="font-size:12px;margin-top:6px">${v.wrong} incorrect · ${v.skip} unanswered</div></div>`}).join('');
+ let c=configs[lastType],co=answers.reduce((n,a,i)=>n+(a===items[i].answer?1:0),0),wr=answers.reduce((n,a,i)=>n+(a!==null&&a!==items[i].answer?1:0),0),score=co*c.m-wr*c.neg;
+ $('overallPerformance').innerHTML=`<div style="font-size:32px;font-weight:900;color:var(--purple)">${score.toFixed(score%1?2:0)} / ${items.length*c.m}</div><div class="bar" style="height:12px;margin:10px 0"><i style="width:${Math.max(0,Math.min(100,score/(items.length*c.m)*100))}%"></i></div><div class="muted">Attempted: ${answers.filter(a=>a!==null).length} of ${items.length} · Marked for review: ${marked.size}</div>`;
+ let weak=Object.entries(by).sort((a,b)=>{let aa=a[1].correct/Math.max(1,a[1].correct+a[1].wrong),bb=b[1].correct/Math.max(1,b[1].correct+b[1].wrong);return aa-bb})[0];
+ $('recommendation').textContent=weak?`Focus on ${weak[0]} next: you got ${weak[1].correct} of ${weak[1].total} questions correct in this demo attempt.`:'Try another practice set to build a performance baseline.';
+}
+function showResult(){show('result')}
+function showAnalysis(){renderAnalysis();show('analysis')}
+function showSolutions(){reviewIndex=0;$('solutionLang').value=lang;renderSolution();show('solutions')}
+function setSolutionLanguage(v){lang=v;$('examLang').value=v;$('introLang').value=v;renderSolution()}
+function renderSolution(){
+ if(!items.length)return;let q=items[reviewIndex],answer=answers[reviewIndex],opts=lang==='hi'?q.optsHi:q.optsEn;
+ $('solutionProgress').textContent=`Question ${reviewIndex+1} of ${items.length}`;
+ $('solutionStatus').textContent=answer===null?'Not attempted':answer===q.answer?'Correct':'Incorrect';$('solutionStatus').className='status '+(answer===q.answer?'correct':answer===null?'':'wrong');
+ $('solutionQuestion').textContent=lang==='hi'?q.hi:q.en;
+ $('solutionOptions').innerHTML=opts.map((o,i)=>{let st=i===q.answer?'color:var(--green);font-weight:800;':i===answer&&answer!==q.answer?'color:var(--red);text-decoration:line-through;':'';let mark=i===q.answer?' ✓ Correct answer':i===answer?' · Your answer':'';return `<div style="padding:7px 3px;${st}">${String.fromCharCode(65+i)}. ${escapeHtml(o)}${mark}</div>`}).join('');
+ $('explanationTitle').textContent=L[lang].expl;$('solutionExplanation').textContent=lang==='hi'?q.expHi:q.expEn;
+}
+function solutionPrev(){if(reviewIndex>0)reviewIndex--;renderSolution()}
+function solutionNext(){if(reviewIndex<items.length-1)reviewIndex++;renderSolution()}
+document.addEventListener('keydown',e=>{if(!$('exam').classList.contains('active')||submitted)return;if(e.key==='ArrowRight')nextQuestion();if(e.key==='ArrowLeft')previousQuestion();if(e.key==='Escape')closeDrawer()});
+</script>
+
+<div style="max-width:1120px;margin:0 auto;padding:0 16px 24px;text-align:center;color:#8a8290;font-size:12px">
+  Nawal Exam Prep · Practice. Analyse. Improve. <span style="display:block;margin-top:4px">Independent demo prototype — not affiliated with Guidely.</span>
+</div>
 </body>
 </html>
